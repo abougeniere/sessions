@@ -1,4 +1,3 @@
-/* global bootbox */
 
 <!DOCTYPE html>
 <html lang="en">
