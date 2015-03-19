@@ -1,5 +1,5 @@
 <html>
 <?php
-    header('Location: login.php');
+    header('Location: testb.php');
     exit;
 ?>

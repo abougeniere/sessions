@@ -40,9 +40,7 @@ function sec_session_start() {
     session_name($session_name);
 
     session_start();            // Start the PHP session
-    session_regenerate_id();    // regenerated the session, delete the old one.
-
-	var_dump($_SESSION);
+    session_regenerate_id();    // regenerated the session, delete the old one.	
 }
 
 function login($email, $password, $mysqli) {
