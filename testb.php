@@ -1,10 +1,7 @@
 <?php
-
 	include_once 'includes/db_connect.php';
 	include_once 'includes/functions.php';
-
 	sec_session_start();
-        //require_once('includes/coolcaptcha/captcha.php');
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +12,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>Bootstrap 101 Template</title>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>           
 
         <!-- Bootstrap
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -84,8 +84,14 @@
 
                         <div class="form-group">
                             <label for="captcha">Captcha</label>
-
+<?php
+$a=0; 
+?>
                             <img src="includes/coolcaptcha/captcha.php"  alt="140x140" id="captcha" class="img-thumbnail img-responsive center-block" />
+<?php
+$a=0; 
+?>
+       
                         </div>
 
                         <div class="form-group">
@@ -102,15 +108,9 @@
         </div>
 
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="js/bootstrap.min.js"></script>
-                 <!-- bootbox code -->
-        <script src="js/bootbox.min.js"></script>
 
         <!-- test bootstrap -->
-<?php var_dump($_SESSION); ?>
+<?php print_r($_SESSION); ?>
     </body>
 </html>
 

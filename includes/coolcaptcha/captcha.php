@@ -7,17 +7,23 @@
 * @link http://code.google.com/p/cool-php-captcha
 * @package captcha
 * @version 0.3
+ * 
+ * 
+ * 
+ *  ATTENTION AUX LIGNES VIDES AVANT SESSION_START
 */
-//include_once 'includes/db_connect.php';
-//include_once 'includes/functions.php';
-//sec_session_start();
+include_once '../../includes/functions.php';
+sec_session_start();
 
-// session_start();
+
+//session_start();
+//
+$_SESSION['test8']="ok";
 $captcha = new SimpleCaptcha();
 // OPTIONAL Change configuration...
 // $captcha->wordsFile = 'words/es.php';
 // $captcha->session_var = 'secretword';
-$captcha->imageFormat = 'png';
+//$captcha->imageFormat = 'png';
 // $captcha->scale = 3; $captcha->blur = true;
 // $captcha->resourcesPath = "/var/cool-php-captcha/resources";
 // OPTIONAL Simple autodetect language example
@@ -30,8 +36,16 @@ if (!empty($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
     }
 }
 */
+
+
 // Image generation
-$captcha->CreateImage();
+//$captcha->CreateImage();
+
+//$_SESSION['test']="ok";
+
+
+
+
 
 /**
 * SimpleCaptcha class
@@ -159,6 +173,7 @@ class SimpleCaptcha {
 
 				public function __construct($config = array())
 				{
+                                   $this->CreateImage();
 				}
 
 				public function CreateImage()
@@ -175,8 +190,6 @@ class SimpleCaptcha {
 								*/
 								$text = $this->GetCaptchaText();
 
-					// alain
-					//$_SESSION['captcha']=$text;
 								$fontcfg = $this->fonts[array_rand($this->fonts)];
 								$this->WriteText($text, $fontcfg);
 
