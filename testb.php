@@ -1,11 +1,11 @@
 <?php
-	include_once 'includes/db_connect.php';
-	include_once 'includes/functions.php';
-	sec_session_start();
+include_once 'includes/db_connect.php';
+include_once 'includes/functions.php';
+sec_session_start();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,7 +43,7 @@
         -->
         <script src="js/bootstrap.js"></script>
 
-         <!-- bootbox code -->
+        <!-- bootbox code -->
         <script src="js/bootbox.min.js"></script>
 
     </head>
@@ -64,10 +64,10 @@
                                     -
                                 </h1>
                                 <p>
-                                    texte login..
+                                    texte ..
                                 </p>
                                 <p>
-                                     <button onclick="bootbox.alert('Hello world!');">Click me</button>
+                                    <button onclick="bootbox.alert('Hello world!');">Click me</button>
                                     <a class="btn btn-primary btn-large" href="#">Learn more</a>
                                 </p>
                             </div>
@@ -84,14 +84,7 @@
 
                         <div class="form-group">
                             <label for="captcha">Captcha</label>
-<?php
-$a=0; 
-?>
                             <img src="includes/coolcaptcha/captcha.php"  alt="140x140" id="captcha" class="img-thumbnail img-responsive center-block" />
-<?php
-$a=0; 
-?>
-       
                         </div>
 
                         <div class="form-group">
@@ -110,7 +103,7 @@ $a=0;
 
 
         <!-- test bootstrap -->
-<?php print_r($_SESSION); ?>
+        <?php print_r($_SESSION); ?>
     </body>
 </html>
 
