@@ -82,11 +82,17 @@ sec_session_start();
                             <label for="InputPassword">Password</label><input class="form-control" id="InputPassword" type="password" placeholder="Type your password" required/>
                         </div>
 
-                        <div class="form-group">
-                            <label for="captcha">Captcha</label>
-                            <img src="includes/coolcaptcha/captcha.php"  alt="140x140" id="captcha" class="img-thumbnail img-responsive center-block" />
-                        </div>
-
+                        <?php
+                        if ($_SESSION["LoginCount"] > MAX_LOGIN_COUNT_BEFORE_CAPTCHA)
+                            {
+                            ?>
+                            <div class="form-group">
+                                <label for="captcha">Captcha</label>
+                                <img src="includes/coolcaptcha/captcha.php"  alt="140x140" id="captcha" class="img-thumbnail img-responsive center-block" />
+                            </div>
+                            <?php
+                            }
+                        ?>
                         <div class="form-group">
                             <input class="form-control" id="saisieCaptcha" type="text" placeholder="Type the captcha text" required/>
                         </div>
@@ -99,11 +105,22 @@ sec_session_start();
                 </div>
             </div>
         </div>
-
-
-
         <!-- test bootstrap -->
-        <?php print_r($_SESSION); ?>
+
+        <?php
+        // Login count
+        if (!isset($_SESSION["LoginCount"]))
+            {
+            $_SESSION["LoginCount"] = 1;
+            }
+        else
+            {
+            $_SESSION["LoginCount"]+=1;
+            }
+
+
+        print_r($_SESSION);
+        ?>
     </body>
 </html>
 

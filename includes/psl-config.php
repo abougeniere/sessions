@@ -26,7 +26,7 @@
  */
 
 /**
- * These are the database login details
+ * DATABASE
  */
 define("HOST", "localhost"); 			// The host you want to connect to.
 define("USER", "sec_user"); 			// The database username.
@@ -48,6 +48,13 @@ define("DATABASE", "secure_login");             // The database name.
 define("CAN_REGISTER", "any");
 define("DEFAULT_ROLE", "member");
 
+/**
+ * LOGIN
+ */
+
+// If login attempt > MAX_LOGIN_COUNT_BEFORE_CAPTCHA show a captcha in login form
+define ("MAX_LOGIN_COUNT_BEFORE_CAPTCHA", 3);
+        
 /**
  * Is this a secure connection?  The default is FALSE, but the use of an
  * HTTPS connection for logging in is recommended.
