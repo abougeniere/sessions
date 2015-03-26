@@ -26,7 +26,7 @@ include_once 'psl-config.php';
 
 function sec_session_start()
     {
-    $session_name = 'sec_session_id';   // Set a custom session name
+    $session_name = SECURE_SESSION_NAME;   // Set a custom session name
     $secure       = SECURE;
 
     // This stops JavaScript being able to access the session id.
@@ -50,19 +50,16 @@ function sec_session_start()
     session_regenerate_id();    // regenerated the session, delete the old one.	
     }
 
-    
-    
 /*
   Destroy secure session
  */
 
 function sec_session_destroy()
     {
-// Détruit toutes les variables de session
+    // Détruit toutes les variables de session
     $_SESSION = array();
 
-// Si vous voulez détruire complètement la session, effacez également
-// le cookie de session.
+// effacer le cookie de session.
 // Note : cela détruira la session et pas seulement les données de session !
     if (ini_get("session.use_cookies"))
         {

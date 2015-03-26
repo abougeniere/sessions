@@ -16,7 +16,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
 /**
  * This file contains global configuration variables
  * Things like whether anyone can register.
@@ -24,13 +23,12 @@
  * Whether or not it's a secure (https) connection could
  * also go here...
  */
-
 /**
  * DATABASE
  */
-define("HOST", "localhost"); 			// The host you want to connect to.
-define("USER", "sec_user"); 			// The database username.
-define("PASSWORD", "eKcGZr59zAa2BEWU"); 	// The database password.
+define("HOST", "localhost");    // The host you want to connect to.
+define("USER", "sec_user");    // The database username.
+define("PASSWORD", "eKcGZr59zAa2BEWU");  // The database password.
 define("DATABASE", "secure_login");             // The database name.
 
 /**
@@ -51,10 +49,15 @@ define("DEFAULT_ROLE", "member");
 /**
  * LOGIN
  */
-
 // If login attempt > MAX_LOGIN_COUNT_BEFORE_CAPTCHA show a captcha in login form
-define ("MAX_LOGIN_COUNT_BEFORE_CAPTCHA", 3);
-        
+define("MAX_LOGIN_COUNT_BEFORE_CAPTCHA", 3);
+
+/**
+ * SESSION
+ */
+// Secure session name
+define("SECURE_SESSION_NAME", "secure_session");
+
 /**
  * Is this a secure connection?  The default is FALSE, but the use of an
  * HTTPS connection for logging in is recommended.

@@ -82,7 +82,7 @@ sec_session_start();
                             <label for="InputPassword">Password</label><input class="form-control" id="InputPassword" type="password" placeholder="Type your password" required/>
                         </div>
 
-                        <?php
+                        <?php // CAPTCHA
                         if (isset($_SESSION["LoginCount"]) && $_SESSION["LoginCount"] >= MAX_LOGIN_COUNT_BEFORE_CAPTCHA)
                             {
                             ?>
@@ -90,12 +90,13 @@ sec_session_start();
                                 <label for="captcha">Captcha</label>
                                 <img src="includes/coolcaptcha/captcha.php"  alt="140x140" id="captcha" class="img-thumbnail img-responsive center-block" />
                             </div>
+
+                            <div class="form-group">
+                                <input class="form-control" id="saisieCaptcha" type="text" placeholder="Type the captcha text" required/>
+                            </div>
                             <?php
                             }
                         ?>
-                        <div class="form-group">
-                            <input class="form-control" id="saisieCaptcha" type="text" placeholder="Type the captcha text" required/>
-                        </div>
 
 
                         <button type="submit" class="btn btn-default">Submit</button>
