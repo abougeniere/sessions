@@ -1,18 +1,10 @@
 <html>
     <?php
-    session_start();
+    include_once 'includes/db_connect.php';
+    include_once 'includes/functions.php';
+    sec_session_start();
 
-    session_unset();
-    session_destroy();
-    session_write_close();
-    setcookie(session_name(), '', 0, '/');
-    session_regenerate_id(true);
-
-    if (ini_get("session.use_cookies"))
-        {
-        $params = session_get_cookie_params();
-        setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]);
-        }
+    sec_session_destroy();
 
     header('Location: testb.php');
     exit;

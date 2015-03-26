@@ -83,7 +83,7 @@ sec_session_start();
                         </div>
 
                         <?php
-                        if ($_SESSION["LoginCount"] > MAX_LOGIN_COUNT_BEFORE_CAPTCHA)
+                        if (isset($_SESSION["LoginCount"]) && $_SESSION["LoginCount"] >= MAX_LOGIN_COUNT_BEFORE_CAPTCHA)
                             {
                             ?>
                             <div class="form-group">
