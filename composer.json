@@ -1,4 +1,15 @@
 {
+    "name": "sessions/sessions",
+    "description": "This is a very cool sessions package!",
+    "version": "0.1.0",
+    "authors": [
+        {
+            "name": "Alain B",
+            "email": "none@yahoo.fr",
+            "homepage": "http://nosite.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "phpmailer/phpmailer": "*"
     }
