@@ -18,7 +18,7 @@
  */
 
 include_once 'db_connect.php';
-include_once 'psl-config.php';
+include_once 'config.php';
 
 $error_msg = "";
 
