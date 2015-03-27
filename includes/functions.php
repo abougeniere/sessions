@@ -73,18 +73,17 @@ function sec_session_destroy()
     }
 
 /* * 
- *  MAIL
+  MAIL
  *  */
 
 function mail_html($destinataire, $sujet, $message, $from, $enCopie = "")
     {
-
-    require_once 'PHPMailerAutoload.php';
+    //require_once 'PHPMailerAutoload.php';   // Fait par composer
 
     $mail          = new PHPMailer;
     $mail->CharSet = 'UTF-8';
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host    = 'smtp.univ-evry.fr';  // Specify main and backup SMTP servers
+    $mail->Host    = SMTP_SERVER;  // Specify main and backup SMTP servers
 
     $mail->From     = 'assistance-gestion@univ-evry.fr';
     $mail->FromName = 'Application Parking UEVE';

@@ -21,6 +21,8 @@ include_once 'includes/functions.php';
 
 sec_session_start();
 
+
+
 if (login_check($mysqli) == true) {
     $logged = 'in';
 } else {

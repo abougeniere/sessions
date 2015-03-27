@@ -59,6 +59,11 @@ define("MAX_LOGIN_COUNT_BEFORE_CAPTCHA", 3);
 define("SECURE_SESSION_NAME", "secure_session");
 
 /**
+ * MAIL
+ */
+define("SMTP_SERVER", "smtp.univ-evry.fr");
+
+/**
  * Is this a secure connection?  The default is FALSE, but the use of an
  * HTTPS connection for logging in is recommended.
  *
