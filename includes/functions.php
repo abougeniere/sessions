@@ -19,7 +19,7 @@
 
 include_once 'psl-config.php';
 
-
+/* * **************************** SESSIONS ************************************* */
 /*
   Start secure session
  */
@@ -71,6 +71,50 @@ function sec_session_destroy()
 // Finalement, on détruit la session.
     session_destroy();
     }
+
+/* * 
+ *  MAIL
+ *  */
+
+function mail_html($destinataire, $sujet, $message, $from, $enCopie = "")
+    {
+
+    require_once 'PHPMailerAutoload.php';
+
+    $mail          = new PHPMailer;
+    $mail->CharSet = 'UTF-8';
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host    = 'smtp.univ-evry.fr';  // Specify main and backup SMTP servers
+
+    $mail->From     = 'assistance-gestion@univ-evry.fr';
+    $mail->FromName = 'Application Parking UEVE';
+    $mail->addAddress($destinataire);
+    $mail->addReplyTo('ne_pas_repondre@univ-evry.fr', 'Ne pas répondre');
+//$mail->addCC('cc@example.com');
+    if ($enCopie != "")
+        $mail->addBCC($enCopie);
+
+    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+//$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+//$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+    $mail->isHTML(true);                                  // Set email format to HTML
+
+    $mail->Subject = $sujet;
+    $mail->Body    = $message;
+    $mail->AltBody = '';
+
+    if (!$mail->send())
+        {
+        echo 'Message non envoyé.';
+        echo 'Mailer Error: ' . $mail->ErrorInfo;
+        }
+    else
+        {
+        echo 'Message has been sent';
+        }
+    }
+
+/* * ****************** */
 
 function login($email, $password, $mysqli)
     {
